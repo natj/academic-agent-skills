@@ -1,7 +1,4 @@
-# Scientific project on radio-pulsar pair cascades
-
-
-## Comprehensive Paper Writing Guide
+# Comprehensive Paper Writing Guide
 
 This guide synthesizes advice from various sources on writing effective academic papers.
 

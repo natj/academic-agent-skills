@@ -1,7 +1,7 @@
 ---
 name: arxiv-fetch
 description: Fetch scientific article LaTeX source from arXiv and store in refs/. Use when asked to download, fetch, or get a paper from arXiv.
-autoContext: false
+autoContext: true
 ---
 
 ## Usage

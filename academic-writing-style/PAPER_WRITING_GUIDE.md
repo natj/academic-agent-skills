@@ -96,6 +96,20 @@ Introduction should roughly follow this structure:
 **Captions:**
 - Give context on what the figure shows, the nuance and intended interpretation, and key technical detail
 - Ideally, the reader understands everything from just the figure and caption
+- Keep captions short and concise — typically 2–4 sentences. Long discursive captions belong in the prose, not the caption.
+- Follow this structure:
+  1. **First sentence** = the topic, as a short noun phrase ending in a period. E.g. *"Relativistic E×B drift error for different particle pushers."* The reader should know exactly what they are looking at after one sentence.
+  2. **Setup sentence** = the configuration and what is being plotted. Quote axes, units, and field/parameter values briefly.
+  3. **Curves sentence** = list the curves shown, with styling details in parentheses. E.g. *"Boris pusher (solid blue), Vay (dashed red), HC (dashed orange), unsplit Cayley (solid light green), and the synthesis pusher (thick dark green)."*
+  4. **Optional one-sentence takeaway** = the headline finding, if not obvious from the figure (e.g. "Only the synthesis pusher clears the next-best scheme by a full order of magnitude.").
+- Styling shorthand: place line/marker descriptors in parentheses after each label, not in a separate legend-prose sentence. Use compact phrases like "(solid blue)", "(dashed orange)", "(thick dark green)" rather than "is shown as a solid blue line".
+- Do **not** dump end-of-run numerical values into the caption; that level of detail belongs in a comparison paragraph or a small inline table in the text.
+- **Avoid meta-narrative about the act of plotting.** Phrases like "we plot X", "we show a plot of X", "the plot shows X" treat the visual representation as the action — "plotting" is conversational English, and in a caption the plot is the object, not an action. Use **show**, **depict**, **visualise**, or just state the quantity directly:
+  - ✗ *"We plot the velocity error as a function of time."*
+  - ✓ *"The velocity error is shown as a function of time."*
+  - ✓ *"Velocity error versus time for the four pushers (curves as labelled)."*
+  - ✓ *"The figure depicts/visualises the secular drift over 20 cyclotron periods."*
+  This rule applies to body prose too: prefer "Figure~X shows Y" over "we plot Y in Figure~X".
 
 **Figure placement:**
 - Put an eye-catching figure on the first page—most readers decide whether to read based on that
@@ -147,6 +161,17 @@ Introduction should roughly follow this structure:
 - Think carefully about which equations are worth displaying
 - If you leave a blank line after `\end{equation}` or `$`, you create an extra line break. Check that this is not unintentionally done.
 - Mathematical equations follow standard punctuation rules—don't forget periods and commas after equations
+
+**Cross-references (LaTeX):**
+- Always use the abbreviated form with a non-breaking space (tilde) between the abbreviation and the reference command:
+  - `Eq.~\eqref{eq:xx}` — equations (note `\eqref` adds parentheses automatically)
+  - `Sect.~\ref{sect:xx}` — sections
+  - `Fig.~\ref{fig:xx}` — figures
+  - `Table~\ref{tab:xx}` — tables (no period; "Table" is not normally abbreviated)
+  - `App.~\ref{app:xx}` — appendices
+- Never use the `\S` symbol (`\S\ref{...}`) to denote a section reference; always spell it as `Sect.~\ref{...}`.
+- The tilde `~` is essential: it produces a non-breaking space so the abbreviation and the number don't get split across a line break.
+- At the start of a sentence, spell out the word in full: "Equation~\eqref{eq:xx} shows…" / "Section~\ref{sect:xx} discusses…".
 
 
 ### Common Pitfalls

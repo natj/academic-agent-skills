@@ -41,20 +41,23 @@ Adjust `nrow_fig`, `ncol_fig`, and `figsize` as needed for multi-panel figures.
 - **Figure widths**: single-column = 3.25in, double-column = 7.0in
 - **Ticks**: all four sides on, minor ticks on, direction outward
 - **No clutter**: no titles, no grid, no text annotations, `frameon=False` on legends
-- **Tight bounds**: set `xlim`/`ylim` tightly to data range — no unnecessary whitespace
+- **Tight bounds manually**: set `xlim`/`ylim` tightly to verified min/max data ranges — no unnecessary whitespace
 - **Manual positioning**: use `fig.subplots_adjust()` to control margins; no `tight_layout`
-- **Colors**: default matplotlib cycle (`C0`, `C1`, `C2`, ...)
+- **Colors**: always use default matplotlib cycle colors (`C0`, `C1`, `C2`, ...)
 - **Lines**: plain lines only, `linewidth=1` (use `0.8` for dense data); no markers
 - **Axis labels**: format as `Quantity name $symbol~(\mathrm{units})$`
   - e.g., `r"Velocity $v_\mathrm{c}~(\mathrm{cm}\,\mathrm{s}^{-1})$"`
   - e.g., `r"Position $x~(\mathrm{cm})$"`
-- **Saving**: always save both formats; filename = `<script_name>_<suffix>.{pdf,png}`
+- **Saving**: save as a pdf format; filename = `<script_name>_<suffix>.pdf`
   ```python
   plt.savefig('scriptname_suffix.pdf')
-  plt.savefig('scriptname_suffix.png', dpi=300)
   ```
 
+
 ## Colorbars
+
+- Use colormap `turbo` as the default colormap for qualitative color ranges. 
+- For divergent values (negative and positive values) use `RdBu` as the default.
 
 Use `matplotlib.colorbar.ColorbarBase` with manually positioned axes:
 

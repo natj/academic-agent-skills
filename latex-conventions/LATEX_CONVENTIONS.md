@@ -183,6 +183,7 @@ Use `\textsc{}` for software/code names: `\textsc{Runko}`, `\textsc{v4}~\textsc{
 ## Equations
 
 - Display equations use `equation` or `align` environments with `\label{eq:...}`
+- Do not use multiple equations on one display line, e.g., separated by `\quad`/`\qquad` (e.g. `A=B,\qquad C=D`). Use `align` with each equation on its own line. 
 - Punctuate displayed equations as part of the sentence (commas, periods)
 - Do not leave blank lines after `\end{equation}` (creates unwanted paragraph break)
 - Use `\left(`/`\right)` for auto-sizing; consider `\big(`/`\Big(` in final pass

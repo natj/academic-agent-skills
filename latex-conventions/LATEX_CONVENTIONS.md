@@ -208,4 +208,4 @@ Use these prefixed comments for tracking issues in the source:
 %NOTE: <informational remark>
 ```
 
-`%DONE:`/`%FIX:` appear as pairs: the question and its resolution.
+`%DONE:`/`%FIX:` appear as pairs: the question and its resolution. They are working scaffolding — sweep the resolved pair out at the next tending pass, and always before a finalized or submitted version.

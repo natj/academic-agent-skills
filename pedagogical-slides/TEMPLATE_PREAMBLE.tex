@@ -1,0 +1,60 @@
+% Beamer skeleton for pedagogical info decks (see DECK_PROTOCOL.md).
+% Rename colors/chain segments per project; keep the structure.
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usetheme{default}
+\usecolortheme{seagull}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}{\textbullet}
+\usepackage{amsmath, amssymb, bm, graphicx}
+
+% deck-wide color code: two physical branches + one accent (instability/controls)
+\definecolor{cL}{HTML}{1F77B4}   % branch A (e.g. superluminal / L sector)
+\definecolor{cA}{HTML}{D62728}   % branch B (e.g. subluminal / A sector)
+\definecolor{cX}{HTML}{FF7F0E}   % accent: instability / positive control
+\definecolor{cInk}{HTML}{202030}
+\setbeamercolor{frametitle}{fg=cInk}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamercolor{structure}{fg=cL}
+
+% footline roadmap: the deck's spine with the current segment bolded.
+% Define one \chainN command per lecture; call it at each lecture boundary.
+\newcommand{\chainstrip}{}
+\setbeamertemplate{footline}{%
+\hspace{3mm}{\tiny\chainstrip}\hfill {\tiny\insertframenumber\,/\,\inserttotalframenumber}\hspace{3mm}\vspace{1.2mm}} \newcommand{\chainI}{\renewcommand{\chainstrip}{\textbf{step one} \textcolor{gray}{$\to$ step two $\to$ step three $\to$ step four}}} \newcommand{\chainII}{\renewcommand{\chainstrip}{\textcolor{gray}{step one $\to$} \textbf{step two} \textcolor{gray}{$\to$ step three $\to$ step four}}}
+% ... one per lecture
+
+% the two content boxes of the protocol
+\newcommand{\analog}[1]{\vfill\begin{beamercolorbox}[rounded=true,sep=4pt]{block body} {\footnotesize \textbf{Analog.} #1}\end{beamercolorbox}} \newcommand{\defbox}[1]{\begin{beamercolorbox}[rounded=true,sep=4pt]{block body} {\footnotesize \textbf{Definition.} #1}\end{beamercolorbox}}
+
+% project math macros go here (match the source manuscript's notation)
+
+\title{...}   % title only: no subtitle, no self-description (DECK_PROTOCOL.md §2)
+\author{}
+\date{}
+
+% Frame patterns:
+%
+% Assertion-titled content frame:
+%   \begin{frame}{The claim of this frame, as a sentence}
+%   [context sentence] [derivation with intermediate line] [physical reading]
+%   \begin{itemize}...\end{itemize}
+%   \analog{named system: the mapping.}
+%   \end{frame}
+%
+% Tool frame (method introduction, before first use):
+%   \begin{frame}{Tool: what a ... is}
+%   \defbox{...definition with every symbol named...}
+%   [how it is instantiated here]
+%   \end{frame}
+%
+% Figure frame with side-column reading guide:
+%   \begin{frame}{Assertion about what the figure shows}
+%   \begin{columns}[T]
+%   \column{0.30\textwidth} {\footnotesize \textbf{Left:} ... \textbf{Right:} ...}
+%   \column{0.68\textwidth} \includegraphics[height=0.86\textheight]{plot_deck_sN}
+%   \end{columns}
+%   \end{frame}
+%
+% Lecture recap frame:
+%   \begin{frame}{Lecture N in one line} \centering \Large ... \end{frame}

@@ -144,6 +144,9 @@ Natbib author-year style:
 - **`\citealt{}`** for no parentheses (inside existing parens): `(\citealt{nattila2022}; ...)`
 - Use `~` before `\citep{}` to prevent line break
 - Never write `(Smith, 2001) shows...` -- use `\citet{}` instead
+- **Multiple citations in one command are ordered by increasing year**, e.g.
+  `\citep{ripperda2022, dexter2023, chatterjee2024}`, never `\citep{ripperda2022, chatterjee2024, dexter2023}`.
+  Same year: alphabetical by first author. Check every multi-key `\citep`/`\citet` before handing over.
 
 
 ## Text Formatting
@@ -183,6 +186,8 @@ Use `\textsc{}` for software/code names: `\textsc{Runko}`, `\textsc{v4}~\textsc{
 ## Equations
 
 - Display equations use `equation` or `align` environments with `\label{eq:...}`
+- **Never use `\simeq`.** Write `\approx` for a quantity evaluated to a number and `\sim` for an
+  order-of-magnitude statement. Grep for `\simeq` before handing over any LaTeX.
 - Do not use multiple equations on one display line, e.g., separated by `\quad`/`\qquad` (e.g. `A=B,\qquad C=D`). Use `align` with each equation on its own line. 
 - Punctuate displayed equations as part of the sentence (commas, periods)
 - Do not leave blank lines after `\end{equation}` (creates unwanted paragraph break)
